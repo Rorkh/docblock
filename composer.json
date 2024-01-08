@@ -1,6 +1,7 @@
 {
     "name": "zeantar/docblock",
     "description": "Simple docblock reading library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Zeantar\\Docblock\\": "src/"
