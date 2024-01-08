@@ -1,0 +1,23 @@
+{
+    "name": "zeantar/docblock",
+    "description": "Simple docblock reading library",
+    "autoload": {
+        "psr-4": {
+            "Zeantar\\Docblock\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rorkh",
+            "email": "78957156+Rorkh@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests",
+        "doc": "phpDocumentor.phar"
+    }
+}
