@@ -151,10 +151,14 @@ class Docblock
      * Returns new docblock object from reflection
      *
      * @param mixed $reflection
+     * @throws \RuntimeException if passed reflection has no getDocComment method
      * @return Docblock|null
      */
-    private static function fromReflection($reflection): ?Docblock
+    public static function fromReflection($reflection): ?Docblock
     {
+        if (!method_exists($reflection, 'getDocComment')) {
+            throw new \RuntimeException('Can\'t create docblock from reflection with no getDocComment method.');
+        }
         $docComment = $reflection->getDocComment();
         if (!$docComment) {
             return null;
