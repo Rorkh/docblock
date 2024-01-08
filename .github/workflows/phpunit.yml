@@ -10,7 +10,12 @@ jobs:
       - uses: actions/checkout@v3
       - uses: php-actions/composer@run-as-current-user
 
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@composer-version--user
+      - name: Install dependencies
+        uses: php-actions/composer@v6
         with:
-          configuration: phpunit.xml
+          command: update
+      
+      - name: Run tests
+        uses: php-actions/composer@v6
+        with:
+          command: test
